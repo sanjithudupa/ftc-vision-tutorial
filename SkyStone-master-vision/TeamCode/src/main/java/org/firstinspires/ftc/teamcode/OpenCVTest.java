@@ -9,11 +9,12 @@ import org.opencv.core.Mat;
 @TeleOp(name="OpenCV Test")
 public class OpenCVTest extends LinearOpMode {
 
-    Camera camera = new Camera(hardwareMap);
+    Camera camera = null;
     ImageProcessing imageProcessing = new ImageProcessing();
 
     @Override
     public void runOpMode() throws InterruptedException {
+        camera = new Camera(hardwareMap);
         camera.initialize();
 
         waitForStart();

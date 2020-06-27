@@ -7,12 +7,13 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 @TeleOp(name="Vuforia Test")
 public class VuforiaTest extends LinearOpMode {
 
-    Camera camera = new Camera(hardwareMap);
+    Camera camera = null;
 
     RobotPosition robotPosition;
 
     @Override
     public void runOpMode() throws InterruptedException {
+        camera = new Camera(hardwareMap);
         camera.initialize();
         camera.initTrackables();
 
